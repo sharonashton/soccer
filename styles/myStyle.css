@@ -1,0 +1,573 @@
+﻿
+@font-face {
+    font-family: 'Nehama';
+    src: url('../fonts/Nehama.ttf') format('truetype');
+    src: url('../fonts/Nehama.ttf') format('truetype'), url('../fonts/Nehama.eot') format('embedded-opentype'),url('../fonts/nehama-webfont.woff2') format('woff2'), url('../fonts/nehama-webfont.woff') format('woff');
+    
+    font-family: 'VarelaRound-Regular';
+    src: url('../fonts/VarelaRound-Regular.ttf') format('truetype');
+    src: url('../fonts/VarelaRound-Regular.ttf') format('truetype'), url('../fonts/VarelaRound-Regular.eot') format('embedded-opentype'),url('../fonts/VarelaRound-Regular.woff') format('woff'),url('../fonts/VarelaRound-Regular.woff2') format('woff2');
+}
+
+
+body {
+   direction: rtl;
+   width: 1280px;
+   height: 720px;
+   margin: 0 auto;
+}
+
+
+#container-fluid {
+    width: 100%;
+    height: 100%;
+    font-family: VarelaRound-Regular;
+    position: relative;
+    /*רקע*/
+    background-image: url('../images/clear.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+
+/*כותרת מגרש הכדורגל*/
+h1 {
+    font-family: Nehama;
+    font-size: 48pt;
+    position: relative;
+    padding-right: 485px;
+    padding-top: 8px;
+}
+
+
+/*כפתור הוראות*/
+#gameInfob {
+    background-image: url('../images/infoB.png');
+    background-repeat: no-repeat;
+    width: 435px;
+    height: 66px;
+    position: relative;
+    top: -79px;
+    margin-right: 814px;
+    cursor:pointer;
+}
+/*כיתוב כפתור הוראות*/
+#gameinfo {
+    font-size: 16pt;
+    position: relative;
+    top: 20px;
+    padding-right: 160px;
+    cursor: pointer;
+}
+
+#goVideob {
+    background-image: url('../images/videoB.png');
+    background-repeat: no-repeat;
+    width: 435px;
+    height: 66px;
+    position: relative;
+    top: -145px;
+    margin-right: 37px;
+    cursor: pointer;
+}
+
+#goVideo {
+    font-size: 16pt;
+    position: relative;
+    top: -5px;
+    padding-right: 95px;
+    
+}
+
+#goVideob img {
+    position: relative;
+    top: 20px;
+    padding-right: 55px;
+    cursor: pointer;
+}
+
+/*חלונית קופצת בכפתור*/
+.popup {
+    background-image: url('../images/pop-up.png');
+    background-repeat: no-repeat;
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    top: -225px;
+    z-index: 2;
+    /*visibility: hidden;*/
+}
+
+    .popup h3 {
+        position: relative;
+        top: 120px;
+        padding-right: 558px;
+    }
+
+    .popup p {
+        position: relative;
+        top: 125px;
+        padding-right: 385px;
+        width: 930px;
+        font-size: 14pt;
+    }
+
+#continueB {
+    background-image: url(../images/continue.png);
+    background-repeat: no-repeat;
+    height: 72px;
+    width: 200px;
+    position: relative;
+    margin-right: 542px;
+    top: 105px;
+    cursor: pointer;
+}
+
+    #continueB p {
+        position: relative;
+        padding-right: 75px;
+        width: 0;
+        top: 26.5px;
+        font-size: 16pt;
+    }
+
+
+.popup2 {
+    background-image: url('../images/videoWindow.png');
+    background-repeat: no-repeat;
+    width: 1280px;
+    height: 720px;
+    position: relative;
+    top: -945px;
+    z-index: 2;
+    visibility: hidden;
+}
+    .popup2 h3 {
+        position: relative;
+        top: 162px;
+        padding-right: 495px;
+    }
+
+.iframeClass {
+    position: relative;
+    right: 403px;
+    top: 173px;
+}
+
+#continueB2 {
+    background-image: url(../images/continue.png);
+    background-repeat: no-repeat;
+    height: 72px;
+    width: 200px;
+    position: relative;
+    margin-right: 539px;
+    top: 173px;
+    cursor: pointer;
+}
+
+    #continueB2 p {
+        position: relative;
+        padding-right: 75px;
+        width: 0;
+        top: 26.5px;
+        font-size: 16pt;
+    }
+
+
+
+/*דיב שמכיל בתוכו את כל הכפתורים*/
+#hotspots {
+    position: relative;
+    bottom: 1500px;
+
+}
+
+/*מעלים את הצורה הרגילה של הצ'קבוקס*/
+input {
+    display: none;
+}
+
+/*עיצוב הכפתור עצמו*/
+.button {
+    background-image: url('../images/hotspot.png');
+    display: block;
+    padding: 12px 12px;
+    border-radius: 100%;
+    cursor: pointer;
+    animation: fadein .5s;
+    z-index: 1;
+}
+
+/*תיבת טקסט*/
+.content {
+    background-image: url(../images/textbox.png);
+    position: absolute;
+    bottom: 176px;
+    left: 38px;
+    padding: 6rem 9rem 4rem 7rem;
+    text-align: center;
+    display: none;
+    margin: 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 2px -2px rgb(211 47 47 / 0%);
+}
+/*תיבת טקסט2*/
+.content2 {
+    background-image: url(../images/textbox.png);
+    position: absolute;
+    bottom: 148px;
+    left: 38px;
+    padding: 6rem 9rem 4rem 7rem;
+    text-align: center;
+    display: none;
+    margin: 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 2px -2px rgb(211 47 47 / 0%);
+}
+/*תיבת טקסט3*/
+.content3 {
+    background-image: url(../images/textbox.png);
+    position: absolute;
+    bottom: 120px;
+    left: 38px;
+    padding: 6rem 9rem 4rem 7rem;
+    text-align: center;
+    display: none;
+    margin: 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 2px -2px rgb(211 47 47 / 0%);
+}
+
+/*איקס בתוך התיבה1*/
+.cross {
+    background-image: url(../images/cross.png);
+    position: relative;
+    top: 13px;
+    right: 35px;
+    padding: 13px 15px;
+    cursor: pointer;
+}
+/*איקס בתוך התיבה2*/
+.cross2 {
+    background-image: url(../images/cross.png);
+    position: relative;
+    top: 13px;
+    left: 55px;
+    padding: 13px 15px;
+    cursor: pointer;
+}
+
+/*איקס בתוך התיבה3*/
+.cross3 {
+    background-image: url(../images/cross.png);
+    position: relative;
+    top: 10px;
+    left: 60px;
+    padding: 13px 15px;
+    cursor: pointer;
+}
+
+/*הגדרות הטקסט בתוך התיבה*/
+.bodyCopy {
+    font-family: 'Varela Round';
+    font-size: 14pt;
+    position: relative;
+    bottom: -5px;
+    right: 99px;
+    text-align: right;
+    width: 736px;
+}
+/*הגדרות הטקסט בתוך התיבה2*/
+.bodyCopy2 {
+    font-family: 'Varela Round';
+    font-size: 14pt;
+    position: relative;
+    bottom: 20px;
+    right: -13px;
+    text-align: right;
+    width: 644px;
+}
+/*הגדרות הטקסט בתוך התיבה*/
+.bodyCopy3 {
+    font-family: 'Varela Round';
+    font-size: 14pt;
+    position: relative;
+    bottom: 20px;
+    left: 20px;
+    text-align: right;
+    width: 641px;
+}
+
+/*מיקומי שמות הכפתורים*/
+
+.names {
+    font-size: 12pt;
+    color: #9800FE;
+    visibility:hidden;
+    z-index:1;
+}
+/*מיקומי הכפתורים והשמות*/
+/*כפתור קו שוער*/
+#b1 {
+    position: relative;
+    left: -1055px;
+    top: 95px;
+}
+/*כיתוב קו השוער*/
+#name1 {
+    position: relative;
+    margin-right: 987px;
+    top: 65px;
+    width: 65px;
+}
+
+/*כפתור נקודת המרכז*/
+#b2 {
+    position: relative;
+    right: 601.5px;
+    top: 250px;
+}
+/*כיתוב נקודת המרכז*/
+#name2 {
+    position: relative;
+    margin-right: 657px;
+    top: 182px;
+    width: 100px;
+    color: #BFFF00;
+}
+
+/*כפתור קו האורך*/
+#b3 {
+    position: relative;
+    right: 725px;
+    top: 475px;
+}
+/*כיתוב קו האורך*/
+#name3 {
+    position: relative;
+    padding-right: 763px;
+    top: 348px;
+}
+
+/*כפתור סימוני הקרן*/
+#b4 {
+    position: relative;
+    right: 140px;
+    top: 68px;
+}
+/*כיתוב סימוני הקרן*/
+#name4 {
+    position: relative;
+    margin-right: 252px;
+    bottom: 58px;
+    width: 100px;
+}
+/*כפתור קו האמצע*/
+#b5 {
+    position: relative;
+    right: 517px;
+    top: 105px;
+}
+/*כיתוב קו האמצע*/
+#name5 {
+    position: relative;
+    margin-right: 660px;
+    bottom: 46px;
+    width: 100px;
+}
+/*כפתור השערים*/
+#b6 {
+    position: relative;
+    right: 10px;
+    top: 210px;
+}
+/*כיתוב השערים*/
+#name6 {
+    position: relative;
+    margin-right: 135px;
+    bottom: -11px;
+    width: 59px;
+}
+
+
+
+/*כפתור רחבת ה16*/
+#b7 {
+    position: relative;
+    right: 135px;
+    top: 355px;
+}
+/*כיתוב רחבת ה16*/
+#name7 {
+    position: relative;
+    margin-right: 333px;
+    top: 157px;
+    width: 100px;
+}
+
+
+/*כפתור קשת רחבת העונשין*/
+#b8 {
+    position: relative;
+    right: 700px;
+    top: 250px;
+}
+/*כיתוב קשת רחבת העונשין*/
+#name8 {
+    position: relative;
+    margin-right: 690px;
+    bottom: -16px;
+    width: 200px;
+    text-align: left;
+}
+
+/*נקודת העונשין*/
+#b9 {
+    position: relative;
+    right: 65px;
+    top: 250px;
+}
+/*כיתוב נקודת העונשין*/
+#name9 {
+    position: relative;
+    margin-right: 265px;
+    width: 10px;
+    bottom: -2px;
+}
+
+/*רחבת השער*/
+#b10 {
+    position: relative;
+    right: 780px;
+    top: 250px;
+}
+/*כיתוב רחבת השער*/
+#name10 {
+    position: relative;
+    margin-right: 988px;
+    bottom: 76px;
+    width: 10px;
+}
+
+/*מה קורה במעבר עכבר*/
+.button:hover {
+    color: #d32f2f;
+    background: white;
+   
+   
+}
+
+/*אנימציות*/
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*קריאה לאנימציות*/
+#input1:checked ~ #content1,
+#input2:checked ~ #content2,
+#input3:checked ~ #content3,
+#input4:checked ~ #content4,
+#input5:checked ~ #content5,
+#input6:checked ~ #content6,
+#input7:checked ~ #content7,
+#input8:checked ~ #content8,
+#input9:checked ~ #content9,
+#input10:checked ~ #content10 {
+    display: block /*!important*/;
+    animation: fadein .5s;
+}
+
+input:checked ~ label .button {
+/*    display: none !important;*/
+visibility:hidden;
+    animation: fadeout .5s;
+}
+
+
+
+#kavShoer {
+    position: absolute;
+    bottom: -165px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#center {
+    position: absolute;
+    bottom: -166px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#kavOrech {
+    position: absolute;
+    bottom: -165.5px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#keren {
+    position: absolute;
+    bottom: -165.5px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#centerLine {
+    position: absolute;
+    bottom: -165.5px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#shaar {
+    position: absolute;
+    top: 223px;
+    margin-right: 146px;
+    visibility: hidden;
+}
+
+#rahavat-16 {
+    position: absolute;
+    top: -11px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#keshet {
+    position: absolute;
+    top: -11px;
+    right: 70px;
+    visibility: hidden;
+}
+
+#nkudatOnshin {
+    position: absolute;
+    top: -10px;
+    right: 66px;
+    visibility: hidden;
+}
+#rahavatHashaar {
+    position: absolute;
+    top: 200px;
+    right: 176px;
+   visibility: hidden;
+}
